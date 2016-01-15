@@ -1,0 +1,94 @@
+<?php require("inc-public-predoctype.php"); ?>
+<?php 
+//CREATE SQL STATEMENT
+$sql_about = "SELECT * FROM tblabout ORDER BY acontent ASC";
+
+//CONNECT TO THE MYSQL SERVER 
+require('inc-conntekiah.php');
+
+//EXECUTE SQL STATEMENT
+$rs_a= mysqli_query($vconntekiah, $sql_about);
+
+//CREATE AN ASSOCIATIVE ARRAY
+$rs_about = mysqli_fetch_assoc($rs_a);
+?>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<?php require("inc-head-content.php"); ?>
+
+<script type='application/ld+json'> 
+        {
+          "@context": "http://www.schema.org",
+          "@type": "person",
+          "name": "Brian Keet",
+          "jobTitle": "Director",
+          "url": "http://tekiahfoundation.blogspot.co.za/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "No 2 Greyland Rd, Ferness Estate, Ottery",
+            "addressLocality": "Cape Town",
+            "addressRegion": "Western Cape",
+            "postalCode": "7800",
+            "addressCountry": "South Africa"
+          },
+          "email": "briankeet@yahoo.com",
+          "telephone": "+27766261024"
+        }
+        </script>
+        <style>
+		
+		#content_container {
+			width: 96%;
+			height: auto;
+			margin: 0 auto 1%;
+			}
+        
+        </style>
+</head>
+<body>
+<!-- WRAPPER -->
+<section id="wrapper">
+
+<!-- HEADER -->
+<?php require('inc-header-content.php'); ?>
+
+<!-- Appear only on tablet layout and higher. Replaces mobile nav bar -->
+<!--Tablet and higher nav bar -->
+<?php require('inc-navbar-desktop.php'); ?>
+<!-- MOBILE HEADER WITH NAV ICON -->
+<?php require('inc-navbar-mobile.php'); ?>
+<!-- CONTENT -->
+<section id="content_container">
+
+
+<img src="sources/images/BS_kids_logo.png" width="1235" height="383" alt="kids">
+
+		<h2><strong>Building a better community</strong></h2>
+        <br>
+    <article class="paragraph">    
+<p><strong>Tekiah Foundation</strong>&nbsp;is a registered non profit organisation who has launched an exciting initiative in the Steenberg/Retreat/Lavender Hill areas called the&nbsp;<strong>Tekiah Foundation Sports Program</strong>.</p>
+<br>
+<p>Tekiah Foundation approached primary schools &ndash; all previously disadvantaged and has launched a Life Skills Program, using sport as a tool.</p>
+<p>Having started with soccer, we have taken over the coaching and managerial responsibilities of three soccer teams (u/11, u/13 boys and u/14 girls) at each school &ndash; a total of 12 teams or 180 kids.</p><p>Through this programme&nbsp;<strong>Tekiah Foundation</strong>&nbsp;plans to revive school sport in the Steenberg/Retreat/Lavender Hill areas by introducing different sports codes to the program and include more learners over the next 3 to 5 years.hh</p>
+<br>
+<p><strong>Tekiah Foundation</strong>&nbsp;is of the opinion that sport and recreation play an important part in young people&rsquo;s lives and that it helps shape community identity. We believe that sport and recreation improves social cohesion and that it provides opportunities for social interaction and sharing of common interests, thus&nbsp;fostering community spirit.</p><p style="margin-left:36pt">&nbsp;</p> 
+</article> 
+
+      
+</section>
+
+<footer id="my_footer">
+
+<!-- FOOTER CONTENT -->
+<?php require('inc-footer-content.php'); ?>
+
+</footer>
+
+<br class="clear_float" />
+
+</section>
+
+</body>
+</html>
